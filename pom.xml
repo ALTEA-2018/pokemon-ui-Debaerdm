@@ -1,7 +1,7 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.miage.altea.tp</groupId>
-    <artifactId>altea-project-skeleton</artifactId>
+    <artifactId>pokemon-ui</artifactId>
     <version>0.1.0</version>
     <packaging>jar</packaging>
 
@@ -47,10 +47,13 @@
             <version>2.23.4</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mustache</artifactId>
+        </dependency>
     </dependencies>
 
-     <build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

@@ -1,0 +1,27 @@
+{{> layout/header}}
+
+<body>
+
+<div class="container">
+    <h1 class="pt-md-5 pb-md-5">List of trainers :</h1>
+
+    <div class="card-deck">
+        {{#trainers}}
+        <div class="col">
+            <div class="card shadow-sm mb-3">
+                <div class="card-header">
+                    <a href="/trainers/{{name}}"><h4 class="my-0 font-weight-normal">Trainer {{name}}</h4></a>
+                </div>
+                <div class="container">
+                    <ul class="list-group m-3">
+                        {{#teams}}<li class="list-group-item "><i style="text-transform: uppercase">{{name}}</i></li>{{/teams}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {{/trainers}}
+    </div>
+
+</div>
+
+{{> layout/footer}}

@@ -7,14 +7,17 @@
 
     <div class="card-deck">
         {{#trainers}}
-        <div class="col">
+        <div class="col-sm-4">
             <div class="card shadow-sm mb-3">
                 <div class="card-header">
                     <a href="/trainers/{{name}}"><h4 class="my-0 font-weight-normal">Trainer {{name}}</h4></a>
                 </div>
                 <div class="container">
                     <ul class="list-group m-3">
-                        {{#teams}}<li class="list-group-item "><i style="text-transform: uppercase">{{name}}</i></li>{{/teams}}
+                        {{#teams}}
+                            <img class="card-img-top" src="{{sprites.front_default}}" alt="Pokemon"/>
+                            <span class="badge badge-info">Level {{level}}</span>
+                        {{/teams}}
                     </ul>
                 </div>
             </div>

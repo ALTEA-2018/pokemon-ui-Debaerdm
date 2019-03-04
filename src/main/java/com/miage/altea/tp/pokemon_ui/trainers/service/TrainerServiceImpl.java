@@ -63,10 +63,16 @@ public class TrainerServiceImpl implements TrainersService {
     private void searchPokemonType(Trainer trainer, List<PokemonType> pokemonTypes) {
         trainer.setTeams(new ArrayList<>());
         trainer.getTeam()
-                .forEach(team ->
-                        pokemonTypes.stream()
-                                .filter(type -> team.getPokemonType() == type.getId())
-                                .findFirst()
-                                .ifPresent(trainer::addPokemonTypeToTeam));
+                .forEach(team -> {
+                    PokemonType pokemon = pokemonTypes.stream()
+                            .filter(type -> team.getPokemonType() == type.getId())
+                            .findFirst().orElseGet(null);
+
+                    if (pokemon != null) {
+                        pokemon.setLevel(team.getLevel());
+
+                        trainer.addPokemonTypeToTeam(pokemon);
+                    }
+                });
     }
 }

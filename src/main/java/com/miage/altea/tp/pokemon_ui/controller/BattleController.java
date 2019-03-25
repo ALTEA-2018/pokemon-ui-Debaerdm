@@ -22,4 +22,9 @@ public class BattleController {
 
         return modelAndView;
     }
+
+    @GetMapping("/battles")
+    public ModelAndView battles(){
+        return new ModelAndView("battles");
+    }
 }
